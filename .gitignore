@@ -24,3 +24,15 @@ Library/metadata/**/
 Library/metadata/*
 Library/metadata/**/*
 Library/metadata/**/**
+*.csproj
+*.sln
+Library/...
+Library/..
+Library/.
+Library/ScriptMapper
+.vs/tstGame/v15/.suo
+.vs/tstGame/v15/Server/sqlite3/storage.ide
+.vs/tstGame/v15/Server/sqlite3/db.lock
+.vs/tstGame/v15/Server/sqlite3/storage.ide-shm
+.vs/tstGame/v15/Server/sqlite3/storage.ide-wal
+Library/AnnotationManager
