@@ -3,26 +3,30 @@
 namespace PC2D
 {
     /// <summary>
-    /// This is a very very very simple example of how an animation system could query information from the motor to set state.
-    /// This can be done to explicitly play states, as is below, or send triggers, float, or bools to the animator. Most likely this
-    /// will need to be written to suit your game's needs.
+    /// Este es un ejemplo muy muy simple de cómo un sistema de animación puede consultar información del motor para establecer el estado.
+    /// Esto se puede hacer para reproducir estados explícitamente, como se muestra a continuación, o enviar disparadores, flotantes o bools al animador. Lo más probable es esto
+    /// tendrá que escribirse para adaptarse a las necesidades de su juego.
     /// </summary>
 
     public class PlatformerAnimation2D : MonoBehaviour
     {
-        public float jumpRotationSpeed;
-        public GameObject visualChild;
 
-        private PlatformerMotor2D _motor;
-        private Animator _animator;
-        private bool _isJumping;
-        private bool _currentFacingLeft;
+        public float jumpRotationSpeed;  //Velocidad que dara los giros al saltar 
+        public GameObject visualChild;   //Objeto al cual se va a animar
 
-        // Use this for initialization
+        private PlatformerMotor2D _motor; //instacia de PlatfomerMoto2D
+        private Animator _animator;  //Instacia al objeto Animator
+        private bool _isJumping; //variable la cual le dice si esta en salto o no
+        private bool _currentFacingLeft; //Dash
+
+        // Iniciaciones al arancar 
         void Start()
         {
+             //Capturar todos los componentes PlatformerMotor(El cual )
             _motor = GetComponent<PlatformerMotor2D>();
+            //Esta parte es para poder insertar animaciones al objeto que se a intrudicodo 
             _animator = visualChild.GetComponent<Animator>();
+            //Play, toma el nombre de una animacion para que sea la primera que muestre a comenzar 
             _animator.Play("Idle");
 
             _motor.onJump += SetCurrentFacingLeft;
