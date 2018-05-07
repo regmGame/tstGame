@@ -299,7 +299,6 @@ public class PlatformerMotor2D : MonoBehaviour
     /// <summary>
     /// The easing function used during the dash. Pick 'Linear' for just a set speed.
     /// </summary>
-    /// 
     public EasingFunctions.Functions dashEasingFunction = EasingFunctions.Functions.EaseOutQuad;
 
     /// <summary>
