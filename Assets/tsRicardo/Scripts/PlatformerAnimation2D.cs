@@ -28,13 +28,16 @@ namespace PC2D
             _animator = visualChild.GetComponent<Animator>();
             //Play, toma el nombre de una animacion para que sea la primera que muestre a comenzar 
             _animator.Play("Idle");
-
+			//No se aun 
             _motor.onJump += SetCurrentFacingLeft;
         }
 
-        // Update is called once per frame
+        // Update, todo codigo escrito aqui pasara cada cuadro "fps"
         void Update()
         {
+			//Este if verifica si el personaje realiza un salto, si este es asì le inserta la animacion de "Jump" luego compara si se realizo el salto 
+			//Adelante o atras para guardar en una variable float
+			//Luego en RotateDir vuelve a hacer otra comparacion para saber de que lador hara el giros
             if (_motor.motorState == PlatformerMotor2D.MotorState.Jumping ||
                 _isJumping &&
                     (_motor.motorState == PlatformerMotor2D.MotorState.Falling ||
@@ -55,6 +58,8 @@ namespace PC2D
                 Vector3 rotateDir = _currentFacingLeft ? Vector3.forward : Vector3.back;
                 visualChild.transform.Rotate(rotateDir, jumpRotationSpeed * Time.deltaTime);
             }
+			//Else que verifica cual es el estado exacto del player (Proceso que hace comparando con el script PlatfomerMoto2D)
+			//Basicamente aquì pone toda las animaciones
             else
             {
                 _isJumping = false;

@@ -1,17 +1,17 @@
 using UnityEngine;
 
 /// <summary>
-/// This class is a simple example of how to build a controller that interacts with PlatformerMotor2D.
+/// Esta clase es un ejemplo simple de cómo construir un controlador que interactúa con PlatformerMotor2D.
 /// </summary>
 [RequireComponent(typeof(PlatformerMotor2D))]
 public class PlayerController2D : MonoBehaviour
 {
-    private PlatformerMotor2D _motor;
+    private PlatformerMotor2D _motor; 
     private bool _restored = true;
     private bool _enableOneWayPlatforms;
     private bool _oneWayPlatformsAreWalls;
 
-    // Use this for initialization
+    // Instancia
     void Start()
     {
         _motor = GetComponent<PlatformerMotor2D>();
